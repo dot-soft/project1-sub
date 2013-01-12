@@ -1,0 +1,281 @@
+$blue: #199eec
+$header-height: 110px
+$headerBg: #333
+$about-height: 100px
+$steps-width: 135px
+$meat: #a52a2a
+$bread: #d5b146
+$vegetables: #5fbf35
+$nuts: #e27b82
+$results: #ff8e00
+
+
+.opacity-zero
+  opacity: 0
+
+@font-face
+  font-family: 'DroidNaskh-Regular'
+  src: url( <%= asset_path 'DroidNaskh-Regular.eot' %>)
+  src: url(<%= asset_path 'DroidNaskh-Regular.woff' %>) format('woff'), url(<%= asset_path 'DroidNaskh-Regular.ttf' %>) format('truetype')
+
+a, a:visited
+  text-decoration: none
+  color: inherit
+
+body
+  direction: rtl
+  margin: 0
+  padding: 0
+  font-family: 'DroidNaskh-Regular', B Mitra
+  font-size: 20px
+  background: $meat
+  overflow: hidden
+
+
+a#description-slider
+  display: block
+  background: $blue
+  cursor: pointer
+  cursor: hand
+  position: absolute
+  top: 0
+  left: 100px
+  text-align: center
+  padding: 2px 10px
+
+
+article#about-web-ashpaz
+  width: 100%
+  position: absolute
+  top: 0
+  display: none
+  height: $about-height
+
+
+header
+  background: $headerBg
+  color: #fff
+  padding: 5px 10px 20px 20px
+  margin: 0
+  height: $header-height
+  z-index: 2000
+
+  #logo
+    width: 120px
+    height: 120px
+    background: $blue url( <%= asset_path "logo.png" %>) center right no-repeat
+    border: 1px white solid
+    float: right
+    margin: 0
+
+    nav
+      margin-right: 140px
+      width: 700px
+      margin-top: 57px
+      visibility: hidden
+
+      a
+        display: inline-block
+        width: 100px
+        text-align: center
+
+  a#navigation-slider
+    display: block
+    float: right
+    margin-top: 60px
+    content: ""
+    width: 12px
+    height: 15px
+    background-color: transparent
+    background-image: url( <%= asset_path "left-arrow.png" %>)
+    cursor: pointer
+    cursor: hand
+    padding: 0
+
+  #title
+    visibility: visible
+    padding-right: 200px
+
+    h1
+      margin: 0
+      color: lighten($blue, 10%)
+
+    p
+      margin: 0
+      color: lighten($headerBg, 50%)
+
+aside#main-steps
+  width: $steps-width
+  position: absolute
+  right: 0
+  bottom: 0
+  top: $header-height+25
+  background: $headerBg
+  padding-top: 30px
+
+
+  a
+    display: block
+    width: $steps-width
+    text-align: center
+    color: #b3b3b3
+    cursor: pointer
+    cursor: hand
+    margin-bottom: 10px
+    padding: 15px 0
+    font-size: 18px
+
+  a.current-step
+    color: #fff
+    font-size: 24px
+    text-shadow: 2px 2px 5px #000
+    border-right: 3px solid #fff
+
+  a#meat
+    background: $meat
+
+section
+  position: absolute
+  top: 0
+  bottom: 0
+  left: -25px
+  right: $steps-width
+  padding: 60px
+  padding-top: $header-height+20
+  list-style-type: none
+  overflow-y: scroll
+  z-index: -100
+
+
+  div, a.next
+    display: inline-block
+    width: 150px
+    padding: 60px 10px
+    background: rgba(0,0,0,0.2)
+    text-align: center
+    margin-top: 5px
+    cursor: pointer
+
+  div.selected
+    background: rgba(0,0,0,0.4)
+    color: #fff
+
+  a.next
+    background: transparent url(<%= asset_path "next-arrow.png" %>)
+    text-align: right
+    opacity: 0.5
+
+    &:hover
+      opacity: 0.8
+
+section:not(.active)
+  display: none
+
+
+section#results-list
+  header
+    background: transparent
+    color: black
+    margin-bottom: 100px
+
+    ul#selected-items
+      list-style-type: none
+      padding-right: 0
+
+      li
+        display: inline-block
+        padding: 0 5px
+        background: rgba(0,0,0,0.2)
+        color: #000
+
+        a.remove-tag
+          display: inline-block
+          padding: 1px
+          margin-right: 15px
+          cursor: pointer
+          cursor: hand
+          font-family: cursive
+
+      li:hover
+        background: rgba(0,0,0,0.4)
+        color: #fff
+
+    label
+      margin-right: 0px
+
+    input#add-items
+      margin-right: 10px
+      background: rgba(0,0,0,0.2)
+      border: 0
+      color: #fff
+      width: 400px
+      height: 30px
+      padding: 5px
+      font-family: 'DroidNaskh-Regular'
+      font-size: 20px
+
+    input:focus
+      outline-color: #000
+
+  >h2
+    margin-right: 20px
+    margin-top: 50px
+
+  article
+    background: rgba(0,0,0,0.4)
+    margin-bottom: 30px
+    padding: 20px 20px 10px 10px
+    color: #fff
+
+    img.food-thumb
+      float: right
+      margin-left: 30px
+      border: 1px solid #fff
+
+    ul
+      list-style-type: none
+
+      li
+        display: inline-block
+        padding: 0 5px
+        background: rgba(255,255,255,0.4)
+        color: #000
+
+    a.more
+      float: left
+      display: inline-block
+      background: rgba(0,0,0,0.4)
+      width: 100px
+      text-align: center
+      margin-top: -40px
+      cursor: pointer
+      cursor: hand
+
+      &:hover
+        background: rgba(0,0,0,0.7)
+
+
+  aside#filters
+    width: 100%
+    background: rgba(0,0,0,0.2)
+
+    label
+      margin-right: 10px
+
+    select
+      margin: 10px
+      background: rgba(0,0,0,0.2) url(<%= asset_path "down-arrow.png" %>) center left no-repeat
+      border: 0
+      color: #fff
+      height: 50px
+      width: 200px
+      padding-right: 10px
+      padding-top: 0
+      appearance: none
+      -moz-appearance: none
+      -webkit-appearance: none
+      font-family: 'DroidNaskh-Regular'
+      font-size: 20px
+
+      option
+        background: $results
