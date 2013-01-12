@@ -29,13 +29,33 @@ jQuery(function ($) {
 
     $('#navigation-slider, #logo').click(function (e) {
         e.preventDefault();
-        $('#title').hide();
-        $('#logo').animate({
-            width:820
-        }, 1000, function () {
-            $('#dot-soft-menu').fadeTo(500, 1);
+        if ($('#dot-soft-menu').width() != 0) {
+            $('#navigation-slide-back').click();
+            return;
+        }
+        $('#logo').css('opacity', 1);
+        $('#title, #dot-soft-menu a, #navigation-slider').hide();
+        $('#dot-soft-menu').fadeIn().animate({
+            width: 700
+        }, 1000, function() {
+            $('#dot-soft-menu a').fadeIn();
+            $('#navigation-slide-back').css('display', 'block');
         });
+    });
 
+    $('#navigation-slide-back').click(function (e) {
+        e.preventDefault();
+        $(this).hide();
+        $('#dot-soft-menu a').fadeOut();
+        $('#dot-soft-menu').animate({
+            width: 0
+        }, 1000, function () {
+            $(this).fadeOut('fast', function () {
+                $('#title, #navigation-slider').fadeIn();
+                $('#logo').css('opacity', '');
+            });
+
+        });
 
     });
 
