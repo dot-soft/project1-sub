@@ -55,7 +55,7 @@ article#about-web-ashpaz
 header
   background: $headerBg
   color: #fff
-  padding: 5px 10px 20px 20px
+  padding: 5px 5px 20px 20px
   margin: 0
   height: $header-height
   z-index: 2000
@@ -67,12 +67,14 @@ header
     border: 1px white solid
     float: right
     margin: 0
+    cursor: pointer
+    cursor: hand
 
     nav
       margin-right: 140px
       width: 700px
       margin-top: 57px
-      visibility: hidden
+      opacity: 0
 
       a
         display: inline-block
@@ -82,7 +84,7 @@ header
   a#navigation-slider
     display: block
     float: right
-    margin-top: 60px
+    margin-top: 55px
     content: ""
     width: 12px
     height: 15px
@@ -124,15 +126,16 @@ aside#main-steps
     margin-bottom: 10px
     padding: 15px 0
     font-size: 18px
-
+  a#meat
+    background: $meat
+	
   a.current-step
     color: #fff
     font-size: 24px
     text-shadow: 2px 2px 5px #000
     border-right: 3px solid #fff
 
-  a#meat
-    background: $meat
+  
 
 section
   position: absolute

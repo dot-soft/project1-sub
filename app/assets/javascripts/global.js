@@ -23,6 +23,24 @@ jQuery(function ($) {
     });
 
 
+    $('section a.next').click(function () {
+        clickNextButton($(this));
+    });
+
+    $('#navigation-slider, #logo').click(function (e) {
+        e.preventDefault();
+        $('#title').hide();
+        $('#logo').animate({
+            width:820
+        }, 1000, function () {
+            $('#dot-soft-menu').fadeTo(500, 1);
+        });
+
+
+    });
+
+    //--------------------------------------functions----------------------------------------
+
     var changeBgColors = function (step) {
         $('#wrapper').find('section div').addClass('opacity-zero').attr('style', '');
         $('#main-steps').find('a').stop().css('background', '#333');
@@ -40,31 +58,31 @@ jQuery(function ($) {
     var fadeIngredients = function (step) {
         $('#wrapper').find('section#' + step + '-list a.next').hide();
 
-        var totalTime = 0;
+        var maxTime = 0;
         $('#wrapper').find('section#' + step + '-list div')
             .each(function (index, element) {
                 var sleepTime = Math.floor(Math.random() * 1000);
-                totalTime += sleepTime;
+                maxTime = maxTime < sleepTime ? sleepTime : maxTime;
                 var t = setTimeout(function () {
                     var d = Math.floor(Math.random() * 500);
-                    $(element).fadeTo(d, 1, function () {
-                        var l = ($('#wrapper').find('section#' + step + '-list div:animated')).length;
-                        if (l == 0)
-                            $('#wrapper').find('section#' + step + '-list a.next').fadeIn('fast');
-                    });
+                    $(element).fadeTo(d, 1);
                 }, sleepTime);
             });
-//        setTimeout(function (){
-//            $('#wrapper').find('section#' + step + '-list a.next').fadeIn('fast');
-//        }, totalTime);
+        setTimeout(function () {
+            $('#wrapper').find('section#' + step + '-list a.next').fadeIn('fast');
+        }, maxTime + 300);
 
     }
 
     var toggleActiveStep = function (step) {
-
         $('aside#main-steps').find('a').removeClass('current-step');
         $('aside#main-steps').find('a#' + step).addClass('current-step');
+    }
 
+    var clickNextButton = function (context) {
+        var id = context.parent().next().attr('id');
+        id = id.replace('-list', '');
+        $('#main-steps').find('a#' + id).click();
     }
 
 });

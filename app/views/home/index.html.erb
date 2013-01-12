@@ -1,0 +1,230 @@
+<a id="description-slider">توضیحات بیشتر</a>
+<article id="about-web-ashpaz">
+  وب آشپز اولین محصول تحت وب گروه نرم افزاری دات سافت است.
+</article>
+
+<header>
+
+  <div id="logo">
+    <nav id="dot-soft-menu">
+      <a href="">صفحه اصلی</a>
+      <a href="">معرفی شرکت</a>
+      <a href="">اطلاعات تماس</a>
+      <a href="">معرفی محصولات</a>
+      <a href="">توانایی ها</a>
+      <a href="">ثبت سفارش</a>
+    </nav>
+  </div>
+  <a id="navigation-slider"></a>
+
+  <div id="title">
+    <h1>وب آشپز</h1>
+    <p>وقتی نمیدونید با مواد توی منزل، چی درست کنید...</p>
+  </div>
+
+</header>
+
+<aside id="main-steps">
+  <a id="meat" class="current-step">گوشت ها</a>
+  <a id="bread">نشاسته ها</a>
+  <a id="vegetables">سبزیجات</a>
+  <a id="nuts">حبوبات</a>
+  <a id="results">نتایج</a>
+</aside>
+
+<section id="meat-list" class="active">
+  <h2>لطفا مواد گوشتی موجود در منزل را انتخاب کنید:</h2>
+
+  <div>مرغ</div>
+  <div>ماهی</div>
+  <div>میگو</div>
+  <div>گوسفند</div>
+  <div>گوساله</div>
+  <div>شتر</div>
+  <div>شترمرغ</div>
+
+  <a class="next">مرحله بعد</a>
+</section>
+
+
+<section id="bread-list">
+  <h2>لطفا مواد نشاسته ای موجود در منزل را انتخاب کنید:</h2>
+
+  <div>نان</div>
+  <div>برنج</div>
+  <div>پاستا</div>
+  <div>اسپاگتی</div>
+  <div>آرد</div>
+  <div>سیب زمینی</div>
+
+  <a class="next">مرحله بعد</a>
+</section>
+
+
+<section id="vegetables-list">
+  <h2>لطفا سبزیجات موجود در منزل را انتخاب کنید:</h2>
+
+  <div>کلم پیچ</div>
+  <div>کاهو</div>
+  <div>گوجه</div>
+  <div>هویج</div>
+  <div>بروکلی</div>
+  <div>قارچ</div>
+  <div>بروکسل</div>
+  <div>ترب</div>
+  <div>بادمجان</div>
+  <div>گل کلم</div>
+  <div>پیاز</div>
+
+  <a class="next">مرحله بعد</a>
+</section>
+
+
+<section id="nuts-list">
+  <h2>لطفا حبوبات موجود در منزل را انتخاب کنید:</h2>
+
+  <div>لوبیا سفید</div>
+  <div>لوبیا قرمز</div>
+  <div>لوبیا چشم بلبلی</div>
+  <div>لوبیا چیتی</div>
+  <div>عدس</div>
+  <div>لپه</div>
+  <div>ماش</div>
+  <div>نخود</div>
+
+  <a class="next">نمایش نتایج</a>
+</section>
+
+
+<section id="results-list">
+  <header>
+    <h2>مواد انتخاب شده:</h2>
+    <ul id="selected-items">
+      <li>
+        مرغ
+        <a class="remove-tag">x</a>
+      </li>
+
+      <li>
+        پیاز
+        <a class="remove-tag">x</a>
+      </li>
+
+      <li>
+        لوبیا چیتی
+        <a class="remove-tag">x</a>
+      </li>
+
+      <li>
+        هویج
+        <a class="remove-tag">x</a>
+      </li>
+
+      <li>
+        بروکلی
+        <a class="remove-tag">x</a>
+      </li>
+
+      <li>
+        برنج
+        <a class="remove-tag">x</a>
+      </li>
+    </ul>
+
+    <label>چیزی از قلم افتاده؟ بنویس و اضافه کن:</label>
+    <input type="text" id="add-items">
+
+  </header>
+
+
+  <h2>فیلتر کردن نتایج</h2>
+
+  <aside id="filters">
+    <label>نوع غذا</label>
+    <select id="type">
+      <option selected>مهم نیست</option>
+      <option>مجلسی</option>
+      <option>دانشجویی</option>
+      <option>سبک</option>
+      <option>فست فود</option>
+      <option>ساندویچ</option>
+      <option>دسر</option>
+    </select>
+
+    <label>مدت زمان پخت</label>
+    <select id="time">
+      <option selected>مهم نیست</option>
+      <option>حداکثر نیم ساعت</option>
+      <option>حداکثر یک ساعت</option>
+      <option>حداکثر دو ساعت</option>
+    </select>
+
+    <label>اصالت غذا</label>
+    <select id="origin">
+      <option selected>مهم نیست</option>
+      <option>ایرانی</option>
+      <option>شمالی</option>
+      <option>جنوبی</option>
+      <option>عربی</option>
+      <option>اروپایی</option>
+      <option>آمریکایی</option>
+      <option>آسیایی</option>
+    </select>
+
+  </aside>
+
+
+  <h2>پیشنهادهای وب آشپز:</h2>
+
+  <article class="recipe" data-order="1">
+    <img src="http://placehold.it/150x150" class="food-thumb">
+    <h2>زرشک پلو با مرغ</h2>
+    <ul class="ingredients">
+      <li>مرغ</li>
+      <li>پیاز</li>
+      <li>برنج</li>
+    </ul>
+    <p>ابتدا برنج را به تعداد افراد اندازه کرده و خیس میکنیم. سپس مرغ را شسته و پاک میکنیم...</p>
+    <a class="more">ادامه</a>
+  </article>
+
+
+  <article class="recipe" data-order="2">
+    <img src="http://placehold.it/150x150" class="food-thumb">
+    <h2>زرشک پلو با مرغ</h2>
+    <ul class="ingredients">
+      <li>مرغ</li>
+      <li>پیاز</li>
+      <li>برنج</li>
+    </ul>
+    <p>ابتدا برنج را به تعداد افراد اندازه کرده و خیس میکنیم. سپس مرغ را شسته و پاک میکنیم...</p>
+    <a class="more">ادامه</a>
+  </article>
+
+
+  <article class="recipe" data-order="3">
+    <img src="http://placehold.it/150x150" class="food-thumb">
+    <h2>زرشک پلو با مرغ</h2>
+    <ul class="ingredients">
+      <li>مرغ</li>
+      <li>پیاز</li>
+      <li>برنج</li>
+    </ul>
+    <p>ابتدا برنج را به تعداد افراد اندازه کرده و خیس میکنیم. سپس مرغ را شسته و پاک میکنیم...</p>
+    <a class="more">ادامه</a>
+  </article>
+
+
+  <article class="recipe" data-order="4">
+    <img src="http://placehold.it/150x150" class="food-thumb">
+    <h2>زرشک پلو با مرغ</h2>
+    <ul class="ingredients">
+      <li>مرغ</li>
+      <li>پیاز</li>
+      <li>برنج</li>
+    </ul>
+    <p>ابتدا برنج را به تعداد افراد اندازه کرده و خیس میکنیم. سپس مرغ را شسته و پاک میکنیم...</p>
+    <a class="more">ادامه</a>
+  </article>
+  <footer></footer>
+</section>
